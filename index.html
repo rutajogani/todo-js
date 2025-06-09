@@ -18,12 +18,17 @@
       />
       <button
         id="time"
-        onclick="add_todo()"
+        onclick="addTodo()"
         class="bg-teal-100 rounded-lg px-3 py-0.5 cursor-pointer text-black border-2 border-[#121212]"
       >
         Add
       </button>
-      <ul id="todo-list"></ul>
+      <div class="flex flex-col items-center">
+        <ul
+          id="todo-list"
+          class="text-3 font-bold text-gray-800 text-center flex flex-col items-start"
+        ></ul>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
