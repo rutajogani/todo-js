@@ -3,10 +3,8 @@
 ### The meaning of Todo List is do work or today's work. what is your today's work. first write and then do work.
 
      Ex. first write your work in input and add your list.
+![image](https://github.com/user-attachments/assets/a876351a-ab87-4e9d-a14b-37bc70ca80a8)
 
-
-
-     image
 
 ### when your work is done than do tick in checkbox.like here
 
