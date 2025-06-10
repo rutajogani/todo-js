@@ -9,7 +9,7 @@
 ### when your work is done than do tick in checkbox.like here
 
     Ex. when your work is done than do tick in checkbox.
-![image](https://github.com/user-attachments/assets/0a70fb82-8db6-42af-95df-2de1e1573a1d)
+![image](https://github.com/user-attachments/assets/0e243f15-f8a8-442a-98e5-50ac72e9b2f3)
 
 
 ### it's very helpful because it's help for do your work
