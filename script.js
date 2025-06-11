@@ -1,3 +1,14 @@
+const arr = [
+  {
+    title: "hello world",
+    status: true,
+  },
+  {
+    title: "hello world-2",
+    status: false,
+  },
+];
+
 function addTodo() {
   const todoInput = document.getElementById("todo-input");
   const text = todoInput.value.trim();
@@ -35,3 +46,6 @@ function addTodo() {
 
   todoInput.value = "";
 }
+
+
+
