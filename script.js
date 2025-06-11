@@ -49,6 +49,6 @@ function addTodo() {
   if (text === "") return;
 
   arr.push({
-    
+      
   });
 }
