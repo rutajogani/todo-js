@@ -15,6 +15,13 @@ function addTodo() {
   const checkbox = document.createElement("input");
   checkbox.setAttribute("id", "todoInput");
   checkbox.setAttribute("type", "checkbox");
+  checkbox.addEventListener("change", function () {
+    if (this.checked) {
+      label.classList.add("line-through");
+    } else {
+      label.classList.remove("line-through");
+    }
+  });
 
   const node = document.createElement("label");
   const todos = document.getElementById("todo-list");
