@@ -63,7 +63,6 @@ function addTodo() {
 
   saveToLocalStorage();
 
-  // first load
   refreshTodos();
   todoInput.value = "";
 }
