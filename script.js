@@ -1,4 +1,6 @@
-const arr = [
+const LOCAL_STORAGE_KEY = "todoItems";
+
+let arr = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [
   {
     title: "hello world",
     status: true,
@@ -9,45 +11,44 @@ const arr = [
   },
 ];
 
+function saveToLocalStorage() {
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(arr));
+}
+
 function refreshTodos() {
   const todos = document.getElementById("todo-list");
   todos.innerHTML = "";
-  
+
   arr.map((value, index) => {
     const li = document.createElement("li");
     li.classList.add("flex", "items-center", "gap-2", "justify-center");
 
     const label = document.createElement("label");
-    label.setAttribute("for", "todoInput");
     label.innerHTML = value.title;
     label.textContent = value.title;
 
     const checkbox = document.createElement("input");
-    checkbox.setAttribute("id", "todoInput");
-    checkbox.setAttribute("type", "checkbox");
+    checkbox.type = "checkbox";
+    checkbox.checked = value.status;
     checkbox.addEventListener("change", function () {
+      value.status = this.checked;
       if (this.checked) {
         label.classList.add("line-through");
       } else {
         label.classList.remove("line-through");
       }
+      saveToLocalStorage();
     });
 
-    const node = document.createElement("label");
-    todos.appendChild(checkbox);
-    todos.appendChild(node);
+    if (value.status) {
+      label.classList.add("line-through");
+    }
 
     li.appendChild(checkbox);
     li.appendChild(label);
-
-    document.getElementById("todo-list").appendChild(li);
-
-    todoInput.value = "";
+    todos.appendChild(li);
   });
 }
-
-// first load
-refreshTodos();
 
 function addTodo() {
   const todoInput = document.getElementById("todo-input");
@@ -60,5 +61,11 @@ function addTodo() {
     status: false,
   });
 
+  saveToLocalStorage();
+
+  // first load
   refreshTodos();
+  todoInput.value = "";
 }
+
+refreshTodos();
