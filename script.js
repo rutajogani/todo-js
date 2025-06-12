@@ -1,15 +1,6 @@
 const LOCAL_STORAGE_KEY = "todoItems";
 
-let arr = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [
-  {
-    title: "hello world",
-    status: true,
-  },
-  {
-    title: "hello world-2",
-    status: false,
-  },
-];
+let arr = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
 
 function saveToLocalStorage() {
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(arr));
